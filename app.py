@@ -49,7 +49,7 @@ def index():
     stats = {
         'most_categories' : top_category['Category'][0],
         'total': top_category['Jumlah'].max(),
-        'rev_table' : playstore.sort_values(by = 'Reviews', ascending = False)[['Category', 'App', 'Reviews', 'Rating']].to_html(classes=['table thead-light table-striped table-bordered table-hover table-sm'])
+        'rev_table' : playstore.sort_values(by = 'Reviews', ascending = False)[['Category', 'App', 'Reviews', 'Rating']].head(10).to_html(classes=['table thead-light table-striped table-bordered table-hover table-sm'])
     }
 
     ## Bar Plot
